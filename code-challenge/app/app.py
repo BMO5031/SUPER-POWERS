@@ -15,7 +15,7 @@ from models import db, Hero, Power, HeroPower
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///heroes.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+#db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 db.init_app(app)

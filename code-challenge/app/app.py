@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from models import db, Hero, Power
-from flask import Flask, make_response
+from flask import Flask, make_response, render_template
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from models import db, Hero
@@ -15,7 +15,7 @@ from models import db, Hero, Power, HeroPower
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///heroes.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 db.init_app(app)
@@ -23,6 +23,11 @@ db.init_app(app)
 @app.route('/')
 def home():
     return 'SUPER HEROES'
+
+@app.route('/', methods=['GET'])
+def welcome():
+    welcome_message = "Welcome to my Super Hero List."
+    return render_template('welcome.html', message=welcome_message)
 
 @app.route('/heroes', methods=['GET'])
 def get_heroes():

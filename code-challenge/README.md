@@ -256,3 +256,6 @@ JSON data, along with the appropriate HTTP status code:
   "errors": ["validation errors"]
 }
 ```
+# AUTHOR: BRIAN MARTIN OMONDI ODHIAMBO
+
+# LINK: https://heroes-ya3b.onrender.com

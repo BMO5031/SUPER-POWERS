@@ -2,7 +2,7 @@
 
 from flask import Flask, make_response
 from flask_migrate import Migrate
-
+from flask_sqlalchemy import SQLAlchemy
 from models import db, Hero
 
 app = Flask(__name__)
